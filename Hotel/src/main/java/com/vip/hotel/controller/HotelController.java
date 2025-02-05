@@ -2,6 +2,7 @@ package com.vip.hotel.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -17,5 +18,5 @@ public interface HotelController {
 	public ResponseEntity<Object> getAllHotels();
 	
 	@GetMapping("/getHotel/{id}")
-	public ResponseEntity<Object> getHotel(String id);
+	public ResponseEntity<Object> getHotel(@PathVariable String id);
 }
