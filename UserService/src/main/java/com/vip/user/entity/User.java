@@ -3,33 +3,39 @@ package com.vip.user.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+import com.mongodb.lang.NonNull;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity
-@Table(name= "micro_users")
+
+@Document(collection= "users")
 @Getter
 @Setter
 @ToString
 public class User {
 
 	@Id
-	@Column(name = "ID")
+	@Field(name = "ID")
 	private String userId;
 	
-	@Column(name = "NAME")
+	@Field(name = "NAME")
+	@Indexed(unique = true)
+    @NonNull
 	private String name;
 	
-	@Column(name = "EMAIL")
+	@Field(name = "EMAIL")
+	@Indexed(unique = true)
 	private String email;
 	
-	@Column(name = "ABOUT")
+	@Field(name = "ABOUT")
 	private String about;
 	
 	@Transient

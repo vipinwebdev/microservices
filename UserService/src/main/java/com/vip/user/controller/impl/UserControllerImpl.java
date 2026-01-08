@@ -3,7 +3,6 @@ package com.vip.user.controller.impl;
 import java.util.List;
 import java.util.UUID;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,12 +13,14 @@ import com.vip.user.controller.UserController;
 import com.vip.user.entity.User;
 import com.vip.user.service.UserService;
 
+import jakarta.annotation.Resource;
+
 @RestController
 @RequestMapping(value = "/users",produces = MediaType.APPLICATION_JSON_VALUE)
 @CrossOrigin("*")
 public class UserControllerImpl implements UserController{
 
-	@Autowired
+	@Resource
 	private UserService userService;
 	
 	@Override

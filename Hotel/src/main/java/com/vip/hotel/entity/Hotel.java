@@ -1,17 +1,16 @@
 package com.vip.hotel.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity
-@Table(name = "hotels")
+@Document(collection = "hotels")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,16 +19,16 @@ import lombok.ToString;
 public class Hotel {
 
 	@Id
-	@Column(name = "ID")
+	@Field(name = "ID")
 	private String id;
 	
-	@Column(name = "NAME")
+	@Field(name = "NAME")
 	private String name;
 	
-	@Column(name = "LOCATION")
+	@Field(name = "LOCATION")
 	private String location;
 	
-	@Column(name = "ABOUT")
+	@Field(name = "ABOUT")
 	private String about;
 	
 }

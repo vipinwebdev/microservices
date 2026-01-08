@@ -1,17 +1,17 @@
 package com.vip.rating.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity
-@Table(name = "ratings")
+
+@Document(collection = "ratings")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,19 +20,19 @@ import lombok.ToString;
 public class Ratings {
 	
 	@Id
-	@Column(name = "ID")
+	@Field(name = "ID")
 	private String ratingId;
 	
-	@Column(name = "USER_ID")
+	@Field(name = "USER_ID")
 	private String userId;
 	
-	@Column(name = "HOTEL_ID")
+	@Field(name = "HOTEL_ID")
 	private String hotelId;
 	
-	@Column(name = "FEEDBACK")
+	@Field(name = "FEEDBACK")
 	private String feedback;
 	
-	@Column(name = "RATING")
+	@Field(name = "RATING")
 	private int rating;
 	
 }

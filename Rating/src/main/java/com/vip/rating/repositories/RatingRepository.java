@@ -2,11 +2,11 @@ package com.vip.rating.repositories;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.vip.rating.entity.Ratings;
 
-public interface RatingRepository extends JpaRepository<Ratings, String> {
+public interface RatingRepository extends MongoRepository<Ratings, String> {
 
 	List<Ratings> findByUserId(String userId);
 	
