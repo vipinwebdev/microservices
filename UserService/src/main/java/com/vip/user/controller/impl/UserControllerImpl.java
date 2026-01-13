@@ -40,7 +40,10 @@ public class UserControllerImpl implements UserController{
 	@Override
 	public ResponseEntity<User> getUser(String userId) {
 		User user = userService.getUser(userId);
-		return ResponseEntity.ok(user);
+		if(user != null){
+			return ResponseEntity.ok(user);
+		}
+		return ResponseEntity.notFound().build();
 	}
 
 }

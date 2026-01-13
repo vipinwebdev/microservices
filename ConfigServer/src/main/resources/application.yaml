@@ -1,7 +1,11 @@
+server:
+  port: 7074
+
 spring:
-  data:
-    mongodb:
-      database: ratings
+  application:
+    name: CONFIG-SERVER
+
+
   cloud:
     config:
       server:
